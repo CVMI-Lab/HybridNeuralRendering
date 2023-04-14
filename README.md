@@ -14,10 +14,9 @@ Moreover, we propose efficient designs to handle motion blurs that occur during 
 
 ## Environment
 * We use the same environment as PointNeRF, please follow their [installation](https://github.com/Xharlie/pointnerf) step by step. (conda virtual environment is recommended) 
-</br>
-</br>
+
 * Install the dependent python libraries
-```
+```Shell
 pip install opencv_python imutils
 ```
 
