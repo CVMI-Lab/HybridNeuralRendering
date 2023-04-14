@@ -58,14 +58,14 @@ Only use hybrid rendering, run:
 bash ./dev_scripts/w_scannet_etf/scene241_hybrid.sh
 ```
 
-### Hybrid rendering + blur-handling module (pre-defined blur kernels)
+### Hybrid rendering + blur-handling module (pre-defined degradation kernels)
 The full version of our method, run:
 ```Shell
 bash ./dev_scripts/w_scannet_etf/scene241_full.sh
 ```
 
-### Hybrid rendering + blur-handling module (learned blur kernels)
-Instead of using pre-defined kernels, we also provide an efficient way to estimate blur kernels from rendered and GT patches.
+### Hybrid rendering + blur-handling module (learned degradation kernels)
+Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches.
 ```Shell
 bash ./dev_scripts/w_scannet_etf/scene241_learnable.sh
 ```
