@@ -20,11 +20,12 @@ Moreover, we propose efficient designs to handle motion blurs that occur during 
 pip install opencv_python imutils
 ```
 
-The code is running on a single NVIDIA 3090 GPU. 
+The code has been tested on a single NVIDIA 3090 GPU. 
 
 
-## Data Preparation
-Please download [datasets]() used in this paper. The layout looks like this:
+## Preparation
+
+* Please download [datasets](https://www.dropbox.com/s/hwcymldycf3z87y/data_src.zip?dl=0) used in this paper. The layout looks like this:
 ```
 HybridNeuralRendering
 ├── data_src
@@ -41,17 +42,18 @@ HybridNeuralRendering
     |   │   │   │──vangoroom
 ```
 
+* Download [pre-trained models](https://www.dropbox.com/sh/1v0p7bnhrixa6bs/AAABuWyTkfdFDOe6vZ1IZheZa?dl=0). Since we currently focus on per-scene optimization, make sure that "checkpoints" folder contains pre-trained models in "init" and "MVSNet" folders. 
+
 ## Quality-aware weights
-Please follow the [RAFT](https://github.com/princeton-vl/RAFT) to build the running environment and download the pre-trained model.
-To compute quality-aware weights, run:
+The weights have been included in the "frame_weights_step5" folder. Alternatively, you can follow the [RAFT](https://github.com/princeton-vl/RAFT) to build the running environment and download their pre-trained models. Then, compute quality-aware weights by running:
 ```Shell
+cd raft
 python demo_pointnerf_train.py --model=models/raft-things.pth --path=path of RGB images  --ref_path=path of RGB images  --scene_name=scene name
 ```
 
-Alternatively, you can directly download the [pre-computed weights]().
-
 ## Train
-We take the training on ScanNet 'scene0241_01' for example:
+We take the training on ScanNet 'scene0241_01' for example (The training scripts will resume training if "xxx.pth" files are provided in the pre-trained scene folder, e.g., "checkpoints/scannet/xxx/xxx.pth". Otherwise, train from scratch.):
+
 ### Hybrid rendering
 Only use hybrid rendering, run:
 ```Shell
@@ -65,7 +67,7 @@ bash ./dev_scripts/w_scannet_etf/scene241_full.sh
 ```
 
 ### Hybrid rendering + blur-handling module (learned degradation kernels)
-Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches.
+Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches. Specifically, flattened rendering and GT patches are concatenated and fed into an MLP to predict the degradation kernel. 
 ```Shell
 bash ./dev_scripts/w_scannet_etf/scene241_learnable.sh
 ```
@@ -76,7 +78,8 @@ Please specify "name" in "scene241_test.sh" to evaluate different experiments, t
 ```Shell
 bash ./dev_scripts/w_scannet_etf/scene241_test.sh
 ```
-Alternatively, you can evaluate using the [pre-trained models]().
+You can directly evaluate using our [pre-trained models](https://www.dropbox.com/sh/1v0p7bnhrixa6bs/AAABuWyTkfdFDOe6vZ1IZheZa?dl=0).
+
 ## Results
 Our method generates high-fidelity results when comparing with PointNeRF' results and reference images.
 Please visit our [project_page](https://daipengwa.github.io/Hybrid-Rendering-ProjectPage/) for more comparisons.
