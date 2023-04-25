@@ -48,7 +48,7 @@ HybridNeuralRendering
 The weights have been included in the "frame_weights_step5" folder. Alternatively, you can follow the [RAFT](https://github.com/princeton-vl/RAFT) to build the running environment and download their pre-trained models. Then, compute quality-aware weights by running:
 ```Shell
 cd raft
-python demo_pointnerf_train.py --model=models/raft-things.pth --path=path of RGB images  --ref_path=path of RGB images  --scene_name=scene name
+python demo_content_aware_weights.py --model=models/raft-things.pth --path=path of RGB images  --ref_path=path of RGB images  --scene_name=scene name
 ```
 
 ## Train
