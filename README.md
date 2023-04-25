@@ -29,20 +29,20 @@ The code has been tested on a single NVIDIA 3090 GPU.
 ```
 HybridNeuralRendering
 ├── data_src
-    ├── nerf
-    │   │   │──nerf_synthetic
-    |   │   │   │──chair
-    |   │   │   │──lego
     ├── scannet
-    |   │   │──frame_weights_step5 
-    │   │   │──scans 
-    |   |   │   │──scene0101_04
-    |   │   │   │──scene0241_01
-    |   │   │   │──livingroom
-    |   │   │   │──vangoroom
+    │   │──frame_weights_step5 
+    │   │──scans 
+    |   │   │──scene0101_04
+    │   │   │──scene0241_01
+    │   │   │──livingroom
+    │   │   │──vangoroom
+    ├── nerf
+    │   │──nerf_synthetic
+    │   │   │──chair
+    │   │   │──lego
 ```
 
-* Download [pre-trained models](https://www.dropbox.com/sh/1v0p7bnhrixa6bs/AAABuWyTkfdFDOe6vZ1IZheZa?dl=0). Since we currently focus on per-scene optimization, make sure that "checkpoints" folder contains pre-trained models in "init" and "MVSNet" folders. 
+* Download [pre-trained models](https://www.dropbox.com/sh/1v0p7bnhrixa6bs/AAABuWyTkfdFDOe6vZ1IZheZa?dl=0). Since we currently focus on per-scene optimization, make sure that "checkpoints" folder contains "init" and "MVSNet" folders with pre-trained models. 
 
 ## Quality-aware weights
 The weights have been included in the "frame_weights_step5" folder. Alternatively, you can follow the [RAFT](https://github.com/princeton-vl/RAFT) to build the running environment and download their pre-trained models. Then, compute quality-aware weights by running:
