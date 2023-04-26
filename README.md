@@ -2,7 +2,7 @@
 
 **Hybrid Neural Rendering for Large-Scale Scenes with Motion Blur** (CVPR 2023)  
 [Peng Dai*](https://github.com/daipengwa), [Yinda Zhang*](https://www.zhangyinda.com/), [Xin Yu](https://scholar.google.com/citations?user=JX8kSoEAAAAJ&hl=zh-CN), [Xiaoyang Lyu](https://scholar.google.com/citations?user=SF7bq48AAAAJ&hl=zh-CN), [Xiaojuan Qi](https://scholar.google.com/citations?user=bGn0uacAAAAJ&hl=en).
-<br>[Paper](), [Project_page](https://daipengwa.github.io/Hybrid-Rendering-ProjectPage/)
+<br>[Paper](https://arxiv.org/abs/2304.12652), [Project_page](https://daipengwa.github.io/Hybrid-Rendering-ProjectPage/)
 
 
 ## Introduction
