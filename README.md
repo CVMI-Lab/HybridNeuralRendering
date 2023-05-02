@@ -93,7 +93,7 @@ If you have questions, you can email me (daipeng@eee.hku.hk).
 ## Citation
 If you find this repo useful for your research, please consider citing our paper:
 ```
-@inproceedings{dai2022hybrid,
+@inproceedings{dai2023hybrid,
   title={Hybrid Neural Rendering for Large-Scale Scenes with Motion Blur},
   author={Dai, Peng and Zhang, Yinda and Yu, Xin and Lyu, Xiaoyang and Qi, Xiaojuan},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
