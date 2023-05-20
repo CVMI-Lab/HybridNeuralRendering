@@ -88,7 +88,7 @@ Please visit our [project_page](https://daipengwa.github.io/Hybrid-Rendering-Pro
 <img src='./images/result.png' width=1000>
 
 ## Visualization
-We visualize the learned degradation kernel in (a). When this kernel is applied to the rendered sharp image patch (b), the resulting degraded image patch (c) more closely resembles the blurry reference image patch (d), allowing for the preservation of
+We visualize the learned degradation kernel in (a). When this kernel is applied to the rendered sharp image patch (b), the resulting degraded image patch (c) more closely resembles the defective reference image patch (d), allowing for the preservation of
 high-frequency information.
 </br>
 </br>
