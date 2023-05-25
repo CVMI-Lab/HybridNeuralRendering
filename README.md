@@ -67,7 +67,7 @@ bash ./dev_scripts/w_scannet_etf/scene241_full.sh
 ```
 
 ### Hybrid rendering + blur-handling module (learned degradation kernels)
-Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches. Specifically, flattened rendering and GT patches are concatenated and fed into an MLP to predict the degradation kernel. 
+Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches. Specifically, flattened rendering and GT patches are concatenated and fed into an MLP to predict the degradation kernel. (Details will be updated in a new version of our paper!)
 ```Shell
 bash ./dev_scripts/w_scannet_etf/scene241_learnable.sh
 ```
