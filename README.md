@@ -2,13 +2,13 @@
 
 **Hybrid Neural Rendering for Large-Scale Scenes with Motion Blur** (CVPR 2023)  
 [Peng Dai*](https://github.com/daipengwa), [Yinda Zhang*](https://www.zhangyinda.com/), [Xin Yu](https://scholar.google.com/citations?user=JX8kSoEAAAAJ&hl=zh-CN), [Xiaoyang Lyu](https://scholar.google.com/citations?user=SF7bq48AAAAJ&hl=zh-CN), [Xiaojuan Qi](https://scholar.google.com/citations?user=bGn0uacAAAAJ&hl=en).
-<br>[Paper](https://arxiv.org/abs/2304.12652), [Project_page](https://daipengwa.github.io/Hybrid-Rendering-ProjectPage/)
+<br>[Paper](https://arxiv.org/pdf/2304.12652.pdf), [Project_page](https://daipengwa.github.io/Hybrid-Rendering-ProjectPage/)
 
 
 ## Introduction
 <img src='./images/pipeline.png' width=1000>
 <br>
-Our method takes advantages of both neural 3D representation and image-based rendering to render high-fidelity and temporally consistent results. 
+Our method takes advantage of both neural 3D representation and image-based rendering to render high-fidelity and temporally consistent results. 
 Specifically, the image-based features compensate for the defective neural 3D features, and the neural 3D features boost the temporal consistency of image-based features.
 Moreover, we propose efficient designs to handle motion blurs that occur during capture.
 
@@ -67,7 +67,7 @@ bash ./dev_scripts/w_scannet_etf/scene241_full.sh
 ```
 
 ### Hybrid rendering + blur-handling module (learned degradation kernels)
-Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches. Specifically, flattened rendering and GT patches are concatenated and fed into an MLP to predict the degradation kernel. (Details will be updated in a new version of our paper!)
+Instead of using pre-defined kernels, we also provide an efficient way to estimate degradation kernels from rendered and GT patches. Specifically, flattened rendering and GT patches are concatenated and fed into an MLP to predict the degradation kernel.
 ```Shell
 bash ./dev_scripts/w_scannet_etf/scene241_learnable.sh
 ```
