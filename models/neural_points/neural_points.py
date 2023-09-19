@@ -219,7 +219,7 @@ class NeuralPoints(nn.Module):
             type=int,
             default="0",
             help=
-            '0 for perspective voxels, and 1 for world coord'
+            '0 for perspective voxels, and 1 for world coord, -1 for world coord and using pytorch cuda'
         )
         parser.add_argument(
             '--ranges',
@@ -327,7 +327,15 @@ class NeuralPoints(nn.Module):
 
         self.reg_weight = reg_weight
         self.opt.query_size = self.opt.kernel_size if self.opt.query_size[0] == 0 else self.opt.query_size
-        self.lighting_fast_querier = lighting_fast_querier_w if self.opt.wcoord_query > 0 else lighting_fast_querier_p
+        if self.opt.wcoord_query == 0:
+            from .query_point_indices import lighting_fast_querier as lighting_fast_querier_p
+            self.lighting_fast_querier = lighting_fast_querier_p
+        elif self.opt.wcoord_query > 0:
+            from .query_point_indices_worldcoords import lighting_fast_querier as lighting_fast_querier_w
+            self.lighting_fast_querier = lighting_fast_querier_w
+        else:
+            from .point_query import lighting_fast_querier as lighting_fast_querier_cuda
+            self.lighting_fast_querier = lighting_fast_querier_cuda
         self.querier = self.lighting_fast_querier(device, self.opt)
 
     def reset_querier(self):
